@@ -5,6 +5,6 @@
   # command = "npm install --legacy-peer-deps" # Use --legacy-peer-deps flag
 
   # Specify the directory to publish (if applicable)
-  publish = "public" # Replace 'public' with your publish directory
+  publish = "build" # Replace 'public' with your publish directory
 
 # Other configurations for Netlify can be added below if needed
