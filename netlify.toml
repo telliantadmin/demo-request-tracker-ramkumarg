@@ -1,0 +1,10 @@
+[build]
+  # Define your build settings here
+  command = "npm install --force" # Use --force flag to force install dependencies
+  # or
+  # command = "npm install --legacy-peer-deps" # Use --legacy-peer-deps flag
+
+  # Specify the directory to publish (if applicable)
+  publish = "public" # Replace 'public' with your publish directory
+
+# Other configurations for Netlify can be added below if needed
