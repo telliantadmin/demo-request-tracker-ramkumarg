@@ -13,12 +13,10 @@ const App = () => {
     // Logic to get the user role
     return localStorage.getItem('role')?.toLowerCase(); // Example role
   };
-  console.log(isAuthenticated, getUserRole(), routes, 'PP0');
   return (
     <Router>
       <Routes>
         {routes.map((route, index) => {
-          console.log(route, index, 'PP1');
           if (route.path.startsWith('/auth')) {
             return (
               <Route
@@ -42,7 +40,8 @@ const App = () => {
         <Route path="/404" element={<NotFoundComponent />} />
         <Route path="/403" element={<ForbiddenComponent />} />
         {/* Default route when no other matches */}
-        <Route path="*" element={<Navigate to="/auth/login" />} />
+        <Route path="/" element={<Navigate to="/auth/login" />} />
+        <Route path="*" element={<Navigate to="/404" />} />
       </Routes>
     </Router>
   );

@@ -200,7 +200,7 @@ const AgentDashboard = ({form}) => {
             {isAllData ? 'Show Assigned to me' : 'Show all requests'}
           </Button>
           &nbsp;&nbsp;
-          <Button type="danger" onClick={() => {localStorage.clear();window.location.href='/auth/login'}}>
+          <Button type="danger" onClick={() => {localStorage.clear();window.location.href='/#/auth/login'}}>
             Logout
           </Button>
           <Table columns={columns} dataSource={data} />

@@ -159,7 +159,7 @@ const AdminDashboard = ({form}) => {
             Add User
           </Button>
           &nbsp;&nbsp;
-          <Button type="danger" onClick={() => {localStorage.clear();window.location.href='/auth/login'}}>
+          <Button type="danger" onClick={() => {localStorage.clear();window.location.href='/#/auth/login'}}>
             Logout
           </Button>
           <Table columns={columns} dataSource={data} />

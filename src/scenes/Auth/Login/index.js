@@ -17,7 +17,7 @@ const Login = ({ form }) => {
           localStorage.setItem('token', res?.token);
           localStorage.setItem('role', res?.role);
           localStorage.setItem('username', res?.username);
-          window.location.href = `/${res?.role?.toLowerCase()}`
+          window.location.href = `/#/${res?.role?.toLowerCase()}`
         } else {
           notification.error({
             message: 'Error',

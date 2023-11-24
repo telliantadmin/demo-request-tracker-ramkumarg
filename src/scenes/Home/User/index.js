@@ -131,7 +131,7 @@ const UserDashboard = ({form}) => {
       sorter: (a, b) => String(a.Priority).localeCompare(b.Priority),
     },
     {
-      title: 'Department',
+      title: 'Assigned To',
       dataIndex: 'AssignedToName',
       key: 'AssignedToName',
     },
@@ -181,7 +181,7 @@ const UserDashboard = ({form}) => {
           <Button type="primary" onClick={() => {setIsAddModalVisible(true);form.resetFields()}}>
             Add Request
           </Button> &nbsp;&nbsp;
-          <Button type="danger" onClick={() => {localStorage.clear();window.location.href='/auth/login'}}>
+          <Button type="danger" onClick={() => {localStorage.clear();window.location.href='/#/auth/login'}}>
             Logout
           </Button>
           <Table columns={columns} dataSource={data} />
@@ -261,7 +261,7 @@ const UserDashboard = ({form}) => {
             <span class="text-muted" style={{fontSize:'10px'}}>No file uploads here! Upload your files in the cloud and send us the link instead. ☁️</span>
           
           </Form.Item>
-          <Form.Item label="Department">
+          <Form.Item label="Assign To">
             {getFieldDecorator('add_AssignedToID', {
               rules: [{ required: true, message: 'Please select AssignedTo!' }],
             })(

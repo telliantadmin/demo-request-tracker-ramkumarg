@@ -64,7 +64,7 @@ const Signup = ({ form }) => {
             message: 'Verify Email',
             description: 'Signup successful! Please verify your email.',
           });
-          window.location.href = '/auth/login';
+          window.location.href = '/#/auth/login';
         } else {
           notification.error({
             message: 'Error',
@@ -133,7 +133,7 @@ const Signup = ({ form }) => {
           </Button>
         </Form.Item>
         <Form.Item>
-                <Link to="#" onClick={()=>alert('OK')}>I Already have account</Link>
+                <Link to="#" onClick={()=>alert(`Ok! No problem. Just hit that back button and you'll be on your way to the login page`)}>I Already have account</Link>
           </Form.Item>
       </Form>
     </div>
