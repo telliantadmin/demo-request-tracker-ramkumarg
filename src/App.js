@@ -14,11 +14,12 @@ const App = () => {
     // Logic to get the user role
     return localStorage.getItem('role')?.toLowerCase(); // Example role
   };
-
+  console.log(isAuthenticated, getUserRole(),routes, "PP0")
   return (
     <Router>
       <Routes>
         {routes.map((route, index) => {
+          console.log(route, index, "PP1")
           if (route.path.startsWith('/auth')) {
             return (
               <Route
