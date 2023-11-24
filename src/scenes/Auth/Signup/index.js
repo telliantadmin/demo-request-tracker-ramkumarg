@@ -64,7 +64,9 @@ const Signup = ({ form }) => {
             message: 'Verify Email',
             description: 'Signup successful! Please verify your email.',
           });
-          window.location.href = '/#/auth/login';
+          setTimeout(()=>{
+            window.location.href = '/#/auth/login';
+          }, 2000)
         } else {
           notification.error({
             message: 'Error',
