@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Modal, Button, Select, Form, Input, Typography, notification } from 'antd';
+import { Table, Modal, Button, Select, Form, Input, notification } from 'antd';
 import userService from '../../../services/userService';
 import moment from 'moment';
 
-const { Title } = Typography;
 const { Option } = Select;
 
 const UserDashboard = ({form}) => {
@@ -136,7 +135,7 @@ const UserDashboard = ({form}) => {
       key: 'AssignedToName',
     },
     {
-      title: 'CreatedAt',
+      title: 'Created At',
       dataIndex: 'CreatedAt',
       key: 'CreatedAt',
       sorter: (a, b) => moment(a.Priority).isBefore(b.Priority),
@@ -147,7 +146,7 @@ const UserDashboard = ({form}) => {
       ),
     },
     {
-      title: 'UpdatedAt',
+      title: 'Updated At',
       dataIndex: 'UpdatedAt',
       key: 'UpdatedAt',
       sorter: (a, b) => moment(a.Priority).isBefore(b.Priority),
@@ -172,10 +171,8 @@ const UserDashboard = ({form}) => {
     <div className="container">
     <div className="row">
         <div className="col-md-12">
-          <Title level={2} className="text-right mt-4">
-            
-            <span className="ml-4">Logged in as: {localStorage.getItem('username')||''} ({localStorage.getItem('role')||''})</span>
-          </Title>
+        <span className="profile-text">Logged in as: {localStorage.getItem('username')||''} ({localStorage.getItem('role')||''})</span>
+       
         </div>
         <div className="col-md-12 mt-4">
           <Button type="primary" onClick={() => {setIsAddModalVisible(true);form.resetFields()}}>
@@ -189,6 +186,7 @@ const UserDashboard = ({form}) => {
       </div>
       {/* Edit Modal */}
       <Modal
+      centered={true}
         title="Edit Request"
         visible={isEditModalVisible}
         onCancel={() => setIsEditModalVisible(false)}
@@ -236,6 +234,7 @@ const UserDashboard = ({form}) => {
 
       {/* Add Modal */}
       <Modal
+       centered={true}
         title="Add Request"
         visible={isAddModalVisible}
         onCancel={() => setIsAddModalVisible(false)}

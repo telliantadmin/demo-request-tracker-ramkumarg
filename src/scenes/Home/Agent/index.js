@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Modal, Button, Select, Form, Input, Typography, notification } from 'antd';
+import { Table, Modal, Button, Select, Form, Input, notification } from 'antd';
 import agentService from '../../../services/agentService';
 import moment from 'moment';
 
-const { Title } = Typography;
 const { Option } = Select;
 
 const AgentDashboard = ({form}) => {
@@ -141,17 +140,17 @@ const AgentDashboard = ({form}) => {
       sorter: (a, b) => String(a.Priority).localeCompare(b.Priority),
     },
     {
-      title: 'RequesterName',
+      title: 'Requester Name',
       dataIndex: 'RequesterName',
       key: 'RequesterName',
     },
     {
-      title: 'AssignedToName',
+      title: 'Assigned To Name',
       dataIndex: 'AssignedToName',
       key: 'AssignedToName',
     },
     {
-      title: 'CreatedAt',
+      title: 'Created At',
       dataIndex: 'CreatedAt',
       key: 'CreatedAt',
       sorter: (a, b) => moment(a.Priority).isBefore(b.Priority),
@@ -162,7 +161,7 @@ const AgentDashboard = ({form}) => {
       ),
     },
     {
-      title: 'UpdatedAt',
+      title: 'Updated At',
       dataIndex: 'UpdatedAt',
       key: 'UpdatedAt',
       sorter: (a, b) => moment(a.Priority).isBefore(b.Priority),
@@ -187,10 +186,8 @@ const AgentDashboard = ({form}) => {
     <div className="container">
     <div className="row">
         <div className="col-md-12">
-          <Title level={2} className="text-right mt-4">
-            
-            <span className="ml-4">Logged in as: {localStorage.getItem('username')||''} ({localStorage.getItem('role')||''})</span>
-          </Title>
+        <span className="profile-text">Logged in as: {localStorage.getItem('username')||''} ({localStorage.getItem('role')||''})</span>
+       
         </div>
         <div className="col-md-12 mt-4 gap-2">
           <Button type="primary" onClick={() => {setIsAddModalVisible(true);form.resetFields()}}>
@@ -208,6 +205,7 @@ const AgentDashboard = ({form}) => {
       </div>
       {/* Edit Modal */}
       <Modal
+      centered={true}
         title="Edit Request"
         visible={isEditModalVisible}
         onCancel={() => setIsEditModalVisible(false)}
@@ -276,6 +274,7 @@ const AgentDashboard = ({form}) => {
 
       {/* Add Modal */}
       <Modal
+      centered={true}
         title="Add Request"
         visible={isAddModalVisible}
         onCancel={() => setIsAddModalVisible(false)}

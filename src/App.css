@@ -1,38 +1,33 @@
-.App {
-  text-align: center;
+.ant-table-body {
+  max-height: calc(100vh - 230px) !important;
+  overflow-y: scroll !important;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ant-table-tbody > tr > td {
+  padding: 8px 16px !important;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+td span button {
+  margin: 0px 5px !important;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
 }
-
-.App-link {
-  color: #61dafb;
+span.profile-text {
+  padding: 0px !important;
+  float: right;
+  top: 16px !important;
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Scroll bar */
+*::-webkit-scrollbar-thumb {
+  background-color:  rgba(14, 70, 192, 0.178) !important;
+  /* border-radius: 3px !important; */
+}
+*::-webkit-scrollbar {
+  width: 7px !important;
+  height: 7px !important;
 }

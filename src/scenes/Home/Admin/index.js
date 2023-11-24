@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Modal, Button, Select, Form, Input, Typography, notification } from 'antd';
+import { Table, Modal, Button, Select, Form, Input, notification } from 'antd';
 import adminService from '../../../services/adminService';
 
 const { confirm } = Modal;
-const { Title } = Typography;
 const { Option } = Select;
 
 const AdminDashboard = ({form}) => {
@@ -137,7 +136,7 @@ const AdminDashboard = ({form}) => {
       title: 'Action',
       key: 'action',
       render: (text, record) => (
-        <span>
+        <span className={`${record?.Username === 'admin' ? 'd-none' : ''}`}>
           <Button icon="edit" onClick={() => handleEdit(record)} />
           <Button icon="delete" onClick={() => handleDelete(record)} />
         </span>
@@ -149,10 +148,7 @@ const AdminDashboard = ({form}) => {
     <div className="container">
     <div className="row">
         <div className="col-md-12">
-          <Title level={2} className="text-right mt-4">
-            
-            <span className="ml-4">Logged in as: {localStorage.getItem('username')||''} ({localStorage.getItem('role')||''})</span>
-          </Title>
+            <span className="profile-text">Logged in as: {localStorage.getItem('username')||''} ({localStorage.getItem('role')||''})</span>
         </div>
         <div className="col-md-12 mt-4">
           <Button type="primary" onClick={() => {setIsAddModalVisible(true);form.resetFields()}}>
@@ -162,11 +158,12 @@ const AdminDashboard = ({form}) => {
           <Button type="danger" onClick={() => {localStorage.clear();window.location.href='/#/auth/login'}}>
             Logout
           </Button>
-          <Table columns={columns} dataSource={data} />
+          <Table columns={columns} dataSource={data}  scroll={{x: '100%', y: 450 }}/>
         </div>
       </div>
       {/* Edit Modal */}
       <Modal
+        centered={true}
         title="Edit User"
         visible={isEditModalVisible}
         onCancel={() => setIsEditModalVisible(false)}
@@ -215,6 +212,7 @@ const AdminDashboard = ({form}) => {
       {/* Add Modal */}
       <Modal
         title="Add User"
+        centered={true}
         visible={isAddModalVisible}
         onCancel={() => setIsAddModalVisible(false)}
         footer={[
