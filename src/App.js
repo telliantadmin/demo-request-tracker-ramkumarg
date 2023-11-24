@@ -44,7 +44,7 @@ const App = () => {
         <Route path="/404" element={<NotFoundComponent />} />
         <Route path="/403" element={<ForbiddenComponent />} />
         {/* Default route when no other matches */}
-        <Route path="*" element={<Navigate to="/404" />} />
+        <Route path="*" element={<Navigate to="/auth/login" />} />
       </Routes>
     </Router>
   );
