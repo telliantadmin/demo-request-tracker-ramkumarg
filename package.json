@@ -9,6 +9,7 @@
     "antd": "^3.26.20",
     "moment": "^2.29.4",
     "react": "^16.14.0",
+    "axios": "^1.6.2",
     "react-dom": "^16.14.0",
     "react-router-dom": "^6.20.0",
     "react-scripts": "5.0.1",
