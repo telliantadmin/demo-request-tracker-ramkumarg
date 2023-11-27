@@ -10,7 +10,7 @@ Welcome to the Request Tracker App! This application helps manage user requests,
 - **Capabilities:** Can manage users within the system.
 
 ### Agent Access (created by admin):
-- **Username:** HR
+- **Username:** HR, IT, Finance, Other
 - **Password:** password
 - **Capabilities:** Can handle requests, process inquiries, and manage ongoing tasks.
 
